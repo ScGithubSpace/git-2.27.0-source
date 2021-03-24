@@ -1,0 +1,47 @@
+-------------------------------------------------------------------------------
+Test set: org.example.ClientTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.486 sec <<< FAILURE!
+testFabCar(org.example.ClientTest)  Time elapsed: 4.156 sec  <<< ERROR!
+org.hyperledger.fabric_ca.sdk.exception.RegistrationException: Error while registering the user org.example.RegisterUser$1@31024624 url: https://localhost:7054  POST request to https://localhost:7054 failed request body {"id":"appUser","type":"client","affiliation":"org1.department1","attrs":[]}. Response: {"result":"","errors":[{"code":0,"message":"Registration of 'appUser' failed: Identity 'appUser' is already registered"}
+],"messages":[],"success":false} 
+	at org.hyperledger.fabric_ca.sdk.HFCAClient.register(HFCAClient.java:404)
+	at org.example.RegisterUser.main(RegisterUser.java:104)
+	at org.example.ClientTest.testFabCar(ClientTest.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.hyperledger.fabric_ca.sdk.exception.HTTPException: POST request to https://localhost:7054 failed request body {"id":"appUser","type":"client","affiliation":"org1.department1","attrs":[]}. Response: {"result":"","errors":[{"code":0,"message":"Registration of 'appUser' failed: Identity 'appUser' is already registered"}
+],"messages":[],"success":false}
+	at org.hyperledger.fabric_ca.sdk.HFCAClient.getResult(HFCAClient.java:1456)
+	at org.hyperledger.fabric_ca.sdk.HFCAClient.post(HFCAClient.java:1374)
+	at org.hyperledger.fabric_ca.sdk.HFCAClient.httpPost(HFCAClient.java:1348)
+	at org.hyperledger.fabric_ca.sdk.HFCAClient.register(HFCAClient.java:395)
+	... 31 more
+
